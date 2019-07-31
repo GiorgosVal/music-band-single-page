@@ -1,0 +1,71 @@
+/* extra small devices */
+
+
+
+
+/* extra small devices */
+@media only screen and (max-width:600px) {
+    h1 {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 200%;
+    }
+    
+    nav a{
+        font-size: 17px;
+        font-weight: 400;
+    }
+    
+    html, body {
+        font-size: 17px;
+        line-height: 150%;
+    }
+    
+   .current-container {
+        grid-template-areas: 
+            'member1'
+            'member1info'
+            'member2'
+            'member2info'
+            'member3'
+            'member3info';
+    }
+    
+    .current-container img {
+        width: 70vw;
+    }
+    
+    .supporting-container{
+         grid-template-areas: 
+            'supporting1 supporting2'
+            'supporting1info supporting2info'
+             'supporting3 supporting4'
+             'supporting3info supporting4info'
+             'supporting5 .'
+             'supporting5info .';
+        grid-column-gap: 1vw;
+    }
+    
+    .supporting-container img {
+        width: 34.5vw;
+    }
+    
+    .disco-container {
+        justify-content: center;
+    }
+
+    .icon {
+        padding: 30px;
+    }
+    
+    footer {
+        height: 200px;
+    }
+
+    footer p {
+        text-align: center;
+        font-size: 13px;
+    }
+}
+
+

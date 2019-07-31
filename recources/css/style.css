@@ -1,0 +1,511 @@
+/* ------------------------------ */
+/* ------- INITIAL SETUP -------- */
+/* ------------------------------ */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    --main-color: rgb(217,167,30);
+    --txt-color: rgb(234, 234, 234);
+    background-color: black;
+    color: var(--txt-color);
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    line-height: 150%;
+}
+
+/* --headings-- */
+h1, h2, h3 {
+    color: var(--main-color);
+    line-height: 150%;
+    font-family: 'Julius Sans One', serif;
+    font-weight: 400;
+    word-spacing: 5px;
+}
+
+h1, h2 {
+    text-transform:uppercase;
+    text-shadow: 2px 2px 20px black, -2px -2px 20px black;
+    user-select: none;
+}
+
+h2 {
+    padding-left: 20px;
+}
+
+
+    /* να ορίσω μέγεθος γραμματοσειράς για να το χρησιμοποιώ αργότερα ως σχετικό μέγεθος */
+    
+
+/* --sections -- */
+section {
+    padding-top: 20px;
+}
+
+
+/* ---------------------- */
+/* ------- HEADER ------- */
+/* ---------------------- */
+
+header{
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(1%20Hero%20image.JPG) center/cover no-repeat fixed;   
+}
+
+header img {
+    width: 33vw;
+    display: block;
+    margin: 0 auto;
+    padding: 10vh 0;
+}
+
+h1{
+    
+    text-align: center;
+    /* να φτιάξω το διάκενο και να ρυθμίσω το μέγεθος να μικραινει με */
+}
+
+/* --navigation-- */
+
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    bottom: 5vh;
+    height: 6vh;
+    width: 100%;
+    z-index: 2;
+    /* να κεντράρω το nav και να ρυθμίσω τα κενά μεταξύ των λινκσ - να μικραίνει το μέγεθος αυτόματα */
+}
+
+nav a{
+    text-decoration: none;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.0);
+    background-color: transparent;
+    color: var(--txt-color);
+   
+}
+
+nav a:link, a:visited{
+    transition: all 0.4s;
+}
+
+nav a:hover, a:active {
+    box-shadow: 0px 0px 0vh 2vh rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--main-color);
+}
+
+/* -- Go to Start button -- */
+.GoStart {
+    padding-bottom: 20px;
+}
+
+.GoStart a{
+    visibility: hidden;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.GoStart a::after {
+    content: '\f10f';
+    font-family: LineAwesome;
+    color: var(--main-color);
+    visibility: visible;
+    position: absolute;
+    right: 15vw;
+    transition: all 0.2s;
+}
+
+.GoStart a:hover::after {
+    transform: scale(1, 1.2);
+}
+
+/* ---------------------- */
+/* ------- BIO ---------- */
+/* ---------------------- */
+#bio {
+    height: 100vh;
+    position: relative;
+}
+
+.bio-container {
+    width: 70vw;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 15vw;
+}
+
+.bio-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.bio-nav-link {
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.bio-nav-link:hover {
+    color: var(--main-color);
+}
+
+
+.bio-text{
+    height: 450px;
+    overflow-y: scroll;    
+       
+}
+
+#IntroText {
+    overflow: hidden;
+    
+}
+
+
+
+
+
+
+
+
+.structure {
+    width: 70vw;
+    text-align: justify;
+    margin: 0 auto;
+    padding-bottom: 20px;    
+}
+
+.structure h3{
+    padding-bottom: 5px;
+}
+
+.structure p{
+    padding-bottom: 10px;
+}
+
+#bio {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Section%201.1-2.jpg) center/cover no-repeat fixed;
+    
+}
+
+/* --------------------------- */
+/* ------- MEMBERS ----------- */
+/* --------------------------- */
+
+.current-item1{grid-area: member1;}
+.current-item2{grid-area: member1info;}
+.current-item3{grid-area: member2;}
+.current-item4{grid-area: member2info;}
+.current-item5{grid-area: member3;}
+.current-item6{grid-area: member3info;}
+
+.current-container {
+    display: grid;
+    grid-template-areas: 
+        'member1 member2 member3'
+        'member1info member2info member3info';
+    justify-content:space-around;
+    grid-column-gap: 1vw;
+}
+
+.current-container figure {
+    padding-bottom: 20px;
+}
+
+.current-container img {
+    width: 22.7vw;
+    border: 1px solid #454545;
+}
+
+.current-container p, .supporting-container p{
+    padding-bottom: 0;
+    text-align: center;
+    font-size: 17px;
+}
+
+
+.supporting-item1{grid-area: supporting1;}
+.supporting-item2{grid-area: supporting1info;}
+.supporting-item3{grid-area: supporting2;}
+.supporting-item4{grid-area: supporting2info;}
+.supporting-item5{grid-area: supporting3;}
+.supporting-item6{grid-area: supporting3info;}
+.supporting-item7{grid-area: supporting4;}
+.supporting-item8{grid-area: supporting4info;}
+.supporting-item9{grid-area: supporting5;}
+.supporting-item10{grid-area: supporting5info;}
+
+.supporting-container{
+    display: grid;
+    grid-template-areas: 
+        'supporting1 supporting2 supporting3 supporting4 supporting5'
+        'supporting1info supporting2info supporting3info supporting4info supporting5info';
+    justify-content: space-around;
+    grid-column-gap: 1vw;
+}
+
+.supporting-container figure {
+    padding-bottom: 10px;
+}
+
+.supporting-container img {
+    width: 13.2vw;
+}
+
+figcaption p:first-child{
+    font-weight: 600;
+}
+
+
+/* --------------------------- */
+/* ------- DISCOGRAPHY ------- */
+/* --------------------------- */
+
+#discography {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(Section%201.6.jpg) center/cover no-repeat fixed;
+    
+}
+
+/* -- grid -- */
+
+.disco-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-top: 10px;
+}
+
+.tooltip {
+    position: relative;
+    width: 250px;
+    height: 250px;
+}
+
+.tooltiptext{
+    z-index: 1;
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(217,167,30, 0.7);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.tooltiptext p{
+    padding-bottom: 0;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 250px;
+    text-shadow: 0px 1px 0px #000, 1px 0px 0px #000, 1px 1px 0px #000, 0px -1px 0px #000, -1px 0px 0px #000, -1px -1px 0px #000;
+}
+
+/* -- decoration -- */
+.tooltiptext:hover {
+    opacity: 1;
+}
+
+.tooltiplink {
+    text-decoration: none;
+    color: var(--txt-color);
+}
+
+/* --------------------------- */
+/* ------- APPEARANCES ------- */
+/* --------------------------- */
+/*
+.appearances-container {
+    padding-top: 10px;
+}
+
+.appearances-item {
+    padding-bottom: 20px;
+}
+
+.appearances-item img{
+    display: block;
+    width: 70vw;
+    max-width: 1344px;
+    border: 1px solid;
+    border-color: #454545;
+}
+
+.appearances-item figcaption {
+    text-align: center;
+    font-style: italic;
+}
+/*
+
+
+
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 70vw;
+    max-height: 70vh;
+    position: relative;
+    margin: auto;
+    border: 1px solid;
+    border-color: #454545; 
+    overflow: hidden;
+
+}
+
+
+.mySlides img {
+    width: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: var(--txt-color);
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    transition: 0.6s ease;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: #454545;
+    color: var(--main-color);
+}
+
+
+/* Caption text */
+.mySlides figcaption {
+    color: var(--txt-color);
+    font-style: italic;
+    text-align: center;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-shadow: 0px 1px 3px #000, 1px 0px 3px #000, 1px 1px 3px #000, 0px -1px 3px #000, -1px 0px 3px #000, -1px -1px 3px #000;
+}
+
+
+/* Number text (1/5 etc) */
+.numbertext{
+    color: var(--txt-color);
+    font-size: 13px;
+    position: absolute;
+    top: 0;
+    padding: 8px 12px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 10px 2px;
+    background-color: #454545;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: var(--main-color);
+}
+
+/* Fading animation */
+
+.fade {
+    animation: fade;
+    animation-duration: 2s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4;}
+    to {opacity: 1;}
+}
+
+/* --------------------------- */
+/* ------- LINKS- ---- ------- */
+/* --------------------------- */
+
+.links {
+    height: 150px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.icon {
+    list-style: none;
+    padding: 20px;
+}
+
+.icon .fab {
+    transform: scale(2,2);
+    color: gray;
+    transition: color 0.2s;
+}
+
+.icon .fa-bandcamp:hover {
+    color: #1DA0C3;
+}
+
+.icon .fa-facebook:hover {
+    color: #4267B2;
+}
+
+.icon .fa-twitter-square:hover {
+    color: #1DA1F2;
+}
+
+/* --------------------------- */
+/* ------- FOOTER ---- ------- */
+/* --------------------------- */
+
+footer {
+    height: 200px;
+}
+
+footer p {
+    text-align: center;
+    font-size: 15px;
+}
+
+footer p a {
+    text-decoration: none;
+    color: var(--main-color);
+}
+
